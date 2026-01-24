@@ -1,0 +1,337 @@
+
+Course 1: Prompt best practises 
+
+Choosing the right LLM for your use case
+With so many LLMs out there today, each with different strengths, weakness, and capabilities, choosing the right one based on your needs is a crucial first step. The performance of your application will depend heavily on how well the model aligns with your goals. Below are the key factors to consider when selecting an LLM.
+
+Accuracy 
+
+If your application involves tasks that require factual correctness, like answering legal, medical, or technical questions, where accuracy is non-negotiable, then look for models that have strong performance in reasoning, retrieval, and consistency. 
+
+Speed 
+
+Real-time applications, like customer support bots or interactive tools, require low-latency responses. If speed is more important than deep reasoning, consider lightweight models which offer fast performance at a lower cost.  
+
+Creativity 
+
+For tasks like content writing, storytelling, or marketing, you want a model that’s imaginative and fluent. Such models can generate expressive and engaging text, with flexible tone and style.  
+
+Cost
+
+Generating more tokens requires more computation by the LLM, which can lead to increased energy consumption and higher usage costs. If you're working at scale or within a budget, it's important to choose models that offer a good balance between performance and cost-efficiency. 
+
+Context window size 
+
+The context window refers to how much text the model can process at once. If your application involves summarizing long documents, analyzing chat history, or referencing multiple data points, you need a model with a large context window.  
+
+Privacy and deployment options 
+
+If you're dealing with sensitive data or have strict compliance requirements, you may need an LLM that supports private hosting or runs on your own infrastructure. Open-source models give you full control, allowing you to comply with data governance policies. 
+
+Choosing the right model is a balance between capability, control, and cost. Define your success criteria clearly, prototype quickly, and iterate based on output quality.
+
+
+
+ommon prompting techniques 
+Since large language models generate outputs based on the input they receive, the way a prompt is crafted plays a crucial role in determining the accuracy, clarity, and relevance of the response. Prompting techniques encompass various strategies that vary in the amount of context or instruction provided to the model.
+
+By understanding and applying the appropriate prompting technique, you can enhance the model’s performance, minimize errors, and achieve more reliable and insightful results.
+
+Zero-shot 
+
+This is a prompting technique where the LLM is asked to perform a task without being given any prior examples or training on that specific request. Instead, the model relies solely on its pre-trained knowledge and language understanding to generate a response. This approach is useful for tasks where explicit examples aren’t necessary, allowing for more flexible and efficient interactions with the model. However, its effectiveness depends on the complexity of the task and how well the prompt is structured to elicit the desired output.
+
+   
+
+One-shot and few-shot
+
+One-shot prompting includes a single example of a task to show the model how to respond, helping it understand the format or logic needed for a similar new input. This approach is useful when the task is slightly complex or ambiguous and a single, well-chosen example can clarify what the model is expected to do. Few-shot prompting, on the other hand, provides several examples, usually between two and five, to give the model a clearer, more comprehensive understanding of the task. This is essential for more complex or nuanced problems where one example may not be enough.
+
+Chain of thought
+
+Chain of thought prompting is a technique where the prompt encourages the model to generate intermediate reasoning steps before producing a final answer. Instead of jumping directly to a conclusion, the model is guided to "think aloud" by breaking down the problem into logical steps, which helps improve accuracy, especially in complex tasks like math problems, logical reasoning, or multi-step decision making.
+
+Zero-shot chain of thought
+
+This method combines the simplicity of zero-shot prompting with the reasoning benefits of chain of thought prompting. In this approach, you give the model a task without any examples, but you explicitly instruct it to reason step by step using natural language cues, most commonly by adding a phrase like “Let’s think step by step”. This subtle cue encourages the model to generate intermediate reasoning steps before reaching a final answer, improving performance on complex tasks.
+
+Prompt chaining  
+
+Prompt chaining is a technique where multiple prompts are linked together in a sequence, with the output of one prompt serving as the input for the next. This method allows you to break down complex tasks into smaller, more manageable steps, enabling better control over how information is processed and refined by the language model. It is especially useful in workflows that involve multi-step reasoning, data transformation, or content generation, as it improves clarity, modularity, and often leads to more accurate and structured results.
+
+
+
+
+
+
+LLM parameters 
+These are configurable values that control how the model behaves when generating output. These settings don’t change the model itself but influence the style, length, creativity, and accuracy of its responses. Adjusting them is the key to customizing the output to match your needs. Here’s a breakdown of some common settings you might come across.
+
+An important setting that you should look for is the max tokens. This sets a limit on how long the generated response should be. Since LLM pricing is often based on token usage, generating longer responses requires more computational power, which can lead to slower responses and higher costs.
+
+LLMs are probabilistic by nature, meaning they don’t always choose the 'most likely' token. Instead, they select from a range of possible next tokens based on probabilities learned during training.
+
+Sampling controls guide how the model makes this choice, whether it should stick closely to high-probability tokens or explore more diverse options. 
+
+Temperature: This controls how random or creative the model is when selecting the next token. A lower temperature makes the model more focused and conservative, whereas a higher temperature encourages diverse outputs. For example, values between 0 to 0.3 makes the model deterministic and factual, values 0.4 to 0.7 makes it balanced, and higher values make the output more creative and varied.
+
+Top-p: Instead of considering all possible next tokens, the model only looks at the smallest set of tokens whose combined probability does not exceed a certain value (p). This gives you control over diversity without extreme randomness. For example, if the value is set to 0.9, only the most likely tokens whose probabilities add up to 90% are considered.
+
+Lesson summary 
+
+We covered quite a lot in this lesson. Here is a quick recap of essential topics that we discussed.
+
+Prompt engineering is the practice of designing and refining these prompts to guide the model in generating accurate, relevant, and context-aware responses.
+
+Choosing the right LLM for your use case is a balance between capability, control, and cost.
+
+Zero-shot, one-shot, few-shot, chain of thought, and prompt chaining are some of the most commonly used prompting techniques. These methods differ in the amount of context and instruction provided to the model.
+
+You can influence the style, length, creativity, and accuracy of an LLM's response by adjusting parameters such as max token, temperature, and Top-p.
+
+
+
+Course 2: AI Agent promt engineering 
+
+
+A high-performing AI agent relies on a prompt that clearly outlines its objectives, structures user inputs and context effectively, and provides guidance on when to invoke tools, retrieve enterprise data, or escalate to a human when necessary. Listed below are the key components of a well-structured AI agent prompt.
+
+Clear role definition 
+
+Assign a specific role or persona to the agent so that it can adopt the right tone, expertise level, and decision-making approach.
+
+Example: You are a cybersecurity expert analyzing system logs for potential threats. 
+
+Explicit task breakdown 
+
+Break down complex tasks into clear, sequential steps to prevent ambiguous or incomplete responses. This structured approach guides the agent more effectively, enhancing both accuracy and reliability.
+
+Example: You are a customer support agent for a software company. Your functions are:
+
+Greet the customer and ask for a summary of their issue.
+
+Diagnose the issue using available documentation.
+
+Offer a solution or workaround.
+
+If unresolved, escalate the issue and provide an expected response time.
+
+Follow up with the customer to confirm resolution. 
+
+Methodology of reasoning 
+
+Instructs the agent on how to think while solving a problem. This helps in analytical, critical thinking, or multi-step decision-making tasks.
+
+Example: Should we expand our business to Europe?
+
+Analyze this question by following these steps:
+
+Evaluate market demand based on recent trends.
+
+Compare with competitor presence in the region.
+
+Assess regulatory and financial risks.
+
+Use quantitative data where applicable and provide a well-reasoned recommendation.  
+
+Output formatting requirement 
+
+Define how the agent should structure its response to ensure clarity and usability.
+
+Example: Summarize the document in the following format:
+
+Key Findings: (bullet points)
+
+Critical Issues: (short paragraph)
+
+Recommended Actions: (numbered list)
+
+Ensure the summary is under 200 words. 
+
+Contextual background information 
+
+Provide background information to ensure the agent understands the bigger picture. This helps it generate more relevant and accurate responses.
+
+Example: You are a helpful assistant supporting employees of a manufacturing company. Employees may contact you about ERP system issues, production line software, or device access problems. The company recently rolled out a new version of its internal HR portal, which has caused some login confusion. Your responses should consider these recent changes. 
+
+Tool usage instructions 
+
+Specify when and how the agent should use available tools, APIs, databases, or automation workflows to complete tasks.
+
+Example: Use the PolicySearch tool when the query involves HR policies. Use the LeaveBalanceChecker tool only when the employee asks about their personal leave balance.  
+
+Fallback and escalation protocols 
+
+Provide conditions under which the agent should ask for clarification or escalate to a human.
+
+Example: If you encounter missing or incomplete data, follow these steps:
+
+Check for alternative sources within the dataset.
+
+If the data is still unavailable, flag the missing values and provide an estimated range based on historical data.
+
+Clearly indicate uncertainty in the final report.
+
+
+Tone and Communication style 
+
+Set expectations for tone and user engagement style, aligned with your brand or use case.
+
+Example: Use a professional but friendly tone. Be concise, empathetic, and avoid jargon. 
+
+
+
+Course 3: Classification of Agent prompts
+
+System prompt
+A system prompt is a foundational instruction set that guides the behavior of an AI agent. It defines the agent’s role, objectives, constraints, establishes rules for decision-making, and provides instructions on when to use specific tools, reference contextual information and escalate issues.
+
+These instructions give the agent initial direction, enabling it to formulate a plan of action that can adapt over time through interactions with tools, automation workflows, and human feedback.
+
+
+
+
+User prompt
+User prompts are specific instructions, requests, or questions a user provides to an agent during an interaction. It clearly outlines the task to be performed, includes any necessary context or input data, and specifies the desired output format.
+
+
+
+
+
+Example:
+Sales agent 
+
+System Prompt:
+
+You are Sales Agent, an AI assistant tasked with automating client registration processes in Salesforce. Your responsibilities include managing records for accounts, contacts, opportunities, and leads.
+
+Follow these guidelines:
+
+Analyze the Email Body:
+
+Carefully read and interpret the email body to gather key information for Salesforce registration processes.
+
+Use Pre-Existing Data When Possible:
+
+ Always use Salesforce retrieval tools first to check for existing records before creating new ones:
+
+ SalesAgent_RetrieveAccounts to find matching accounts.
+
+ SalesAgent_RetrieveContacts to check for existing contacts.
+
+ SalesAgent_RetrieveOpportunities for relevant opportunities.
+
+ SalesAgent_RetrieveLeads for lead information.
+
+ Compare any retrieved data with the new input. If discrepancies are found, confirm with the user whether to update or leave the data unchanged.
+
+Validate Parameters Before Execution:
+
+ For each function, ensure you have all the necessary parameters as per the payloadSchema.
+
+ If missing values are detected, initiate a task in the Action Center by calling SalesAgent_PerformEscalation.
+
+No Data Generation:
+
+Do not generate or assume missing data. All information must come from the {{EmailBody}} input or through existing Salesforce data.
+
+
+Dynamic Tool Selection Based on Email Input:
+
+ Select the appropriate tool combination for each scenario based on the content of {{EmailBody}}.
+
+ Examples of tool combinations:
+
+ Retrieve + Create: Retrieve records first and create only when necessary.
+
+ Retrieve + Update: Retrieve records and update any discrepancies based on user input.
+
+ Mixed Operations: Retrieve, create, and update records depending on the email data.
+
+Escalations and Task Continuity:
+
+ If at any point during the execution of tools additional information is needed, escalate the issue by creating an Action Center task.
+
+ If an escalation is required before continuing with remaining steps, after the task is completed in Action Center, resume execution of the remaining tools and complete the task.
+
+ If additional information is required before starting any step in the workflow, create a task in Action Center, wait for the task completion, and then resume and execute the original request.
+
+Handling All Missing Information:
+
+ If any required data is missing (not just crucial information), escalate the issue by creating an Action Center task using SalesAgent_PerformEscalation.
+
+ Input `reason` as a detailed list of missing parameters.
+
+ Input `assignee` using the email of the end-user.
+
+ Set the `title` argument to "Additional details needed (current date and time)".
+
+Execution Outputs:
+
+ ActionCenterTaskCreated: Set to True if an Action Center task is created, otherwise set it to False.
+
+ ActionCenterTaskURL: Populate with the task URL if a task is created, otherwise leave blank.
+
+ ExecutionSummary: Provide a numbered step-by-step summary detailing all actions taken, including input/output values.
+
+Goal:
+
+Optimize and streamline Salesforce operations by efficiently automating client registration with minimal user involvement while maintaining accuracy. Ensure that any escalations and additional information requirements are handled smoothly by creating Action Center tasks and resuming the workflow after tasks are completed.
+
+User prompt:
+
+The user received the following email from an account executive:
+
+<EmailBody> {{EmailBody}} </EmailBody>  
+
+
+Course 3: Agent prompt optimization
+
+Prompt health score
+The prompt health score is a metric used to evaluate the effectiveness of a prompt based on best practices for AI agent prompt engineering. This measure is based on whether the prompt has the following key aspects and how well they are articulated.
+
+based on:
+
+Clarity: The prompt clearly defines the role of the agent and outlines the task it needs to perform.
+
+Completeness: The prompt provides detailed instructions on the task to be performed, including the tools to be used and the process for handling missing data.
+
+Consistency: The prompt is consistent in its instructions and does not contain contradictory information.
+
+Chain of thought: The prompt outlines a clear chain of thought by specifying the steps to be followed.
+
+Demos: The prompt includes examples to guide the agent in understanding the task. 
+
+Tools:
+Autopilot
+
+
+
+
+Summary:
+
+LLM Fundamentals & Tokens
+
+Tokens are the smallest units that LLMs process - they can be words, subwords, or even individual characters. They're how the model breaks down text before understanding it.
+Embeddings are numerical representations of tokens - vectors of numbers that capture meaning. Similar concepts have similar embeddings, allowing the model to understand relationships mathematically.
+Prompt Engineering Basics
+
+Defining a "Role" in prompts establishes the agent's identity and guides its behavior. When you tell an AI "You are a senior Python developer," it shapes how it responds based on that function.
+Traditional prompt engineering gets direct responses from AI models with single interactions. AI agent prompt engineering guides multi-step, autonomous decision-making where the agent can plan and execute complex tasks over multiple steps.
+AI Agent Design Principles
+
+Explicit task breakdown improves AI agent performance by allowing it to focus on individual steps. This increases accuracy and reasoning quality because the agent tackles one manageable piece at a time instead of being overwhelmed.
+Temperature Settings
+
+Setting temperature to 0 produces deterministic, focused outputs - the model always picks the most likely next token. Higher temperatures create more random, creative results.
+Quick Memory Tricks:
+
+Tokens = Text chunks
+Embeddings = Meaning as numbers
+Role = Identity shapes behavior
+Task breakdown = Better accuracy
+Temperature 0 = Predictable output
+
+
+
+

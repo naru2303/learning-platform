@@ -1,0 +1,274 @@
+
+Course 1 Introduction to AI 
+	Cognitive Tasks: Thinking, doing, Solving. 
+	Machine Learnign is built through Training Set
+
+
+	GenAI: 
+	  1- Input 
+	  2- Data processed 
+	  3- Output 
+
+	Coversational AI Tool -> Gemini 
+
+	Limitations of AI 
+	  - Cant learn independently 
+	  - can reflect or amplify biases 
+	  - Hallucination -> AI output that does not make sense 
+	  
+Course 2 Maximize Productivity With AI Tools
+	Human in the loop 
+	GenAI - Bringing ideas to life 
+	Standalone AI Tool - For a unique app (Speeko voice communication tool) 
+	Custom AI Feature - Specific usage for features
+	AI Model - AI Model trained with Datasets (AI Tool is powered by Model) 
+	
+	AI agent is an AI-powered tool that can autonomously perform tasks with little human oversight. 			 For example, AI agents can automatically respond to emails, post content on social media, or monitor computer networks. You set the rules for how the AI agents operate, and the AI agents complete tasks following those rules, allowing you to work on other tasks.
+	
+	
+	The process of training AI models:
+	1 - Define the problem to be solved.
+	2 - Collect relevant data to train the model.
+	3 - Prepare the data for training
+	4 - Train the model.
+	5 - Evaluate the model
+	6 - Deploy the model. 
+	
+	
+	
+	List of GenAI Tools:
+	Text and content generative AI tools: 
+	
+	Gemini
+	NotebookLM
+	Anthropic Claude
+	ChatGPT
+	Clockwise
+	Grammarly
+	Jasper
+	Microsoft Copilot
+	Notion AI
+	Zapier
+	
+	Code-generative AI tools: 
+	
+	Gemini Code Assist
+	GitHub Copilot
+	Jupyter AI
+	Tabnine
+
+	Image- and media-generative AI tools: 
+	
+	Gemini with Nano Banana
+	Asset Studio
+	Adobe Firefly
+	Canva Magic Design™ 
+	DALL-E
+	ElevenLabs
+	Midjourney
+	Runway
+
+
+	Evaluation for AI Usage:
+	Identify bottlenecks: Pinpoint the most time-consuming or repetitive tasks in your day. Is it writing first drafts? Summarizing meeting notes? Finding bugs in code?
+
+	Start small: Choose one bottleneck and find a single AI tool that addresses it. Focus on mastering that tool for that specific task.
+
+	Build a habit: Make a conscious effort to use your chosen tool whenever you perform that task. The goal is to make it a natural reflex.
+
+	Evaluate and expand: After a week or two, assess the impact. Are you saving time? Is the quality of your work improving? If the integration is successful, look for the next bottleneck and explore how AI can help you there.
+	
+	HIL: strategy for doing so is a human-in-the-loop approach, which uses a combination of machine and human intelligence to train, use, verify, and refine AI models. Let's try this strategy. Consider this scenario. An insurance company uses a custom AI solution to answer customer inquiries. 
+	
+	Knowledge cut-off: AI DOes not have Data about the context, it leads to hallucinations (see course 1) 
+	
+	Human in loop process: A way to refine AI Answers (AI Asks, Human responds, Ai refines) 
+	
+	Gemini is integrated in Google Tools like google sheets, slides and so on, check the same with copilot and microsoft tools 
+	
+	
+
+
+
+Course 3 Discover the Art of Prompting
+
+	LLM can predict text input with probability and statistic
+	we must be aware of LLMs Limitations to avoid hallucinations and get good output 
+	
+	
+	Design the best promt to get the best output 
+	
+	The prompt to be specific to get the wanted output (improve quality of LLM output) 
+	
+	
+	Infos to provide AI tool with 
+
+	Persona: What expertise do you want the AI tool to draw from, and who is the audience? For example, you might ask the tool to complete the task with the expertise of an IT professional, or ask it to create an output geared towards a specific audience like your manager or team. 
+
+	Format: How do you want the output to be formatted? For example, you might ask the AI tool to create a bulleted list or a comparison table.
+	
+	Example:
+	Task: Create a social media post about an upcoming music festival that speaks to the local music community while attracting out-of-state festival-goers.
+
+Persona: You're a concert promoter specializing in raising ticket sales in the alternative rock music industry.
+
+Format: Limit the post to 125-characters. Include 5 relevant hashtags.
+
+	Context:
+
+Reasons and objectives for performing the task
+
+Rules or guidelines that the output must follow
+
+Relevant background information the tool should consider
+
+Those details can help an AI tool better understand your needs. Here's an example of a prompt that provides necessary context:
+
+	Example of Context:
+
+You're a concert promoter specializing in raising ticket sales in the alternative rock music industry. Create a social media post about an upcoming music festival that speaks to the local music community while attracting out-of-state festival-goers. Limit the post to 125-characters. Include 5 relevant hashtags. The local audience is primarily college students and young professionals (age 21-35) who follow indie rock. The festival features 12 bands over 2 days, with camping options and local food vendors.
+
+
+	References: 
+	
+	Stuff related to the Context, that the AI can use to get more details like documents, infos, images and so on
+
+	
+	Evaluate the Output: 
+	Accuracy
+	Bias
+	Relevancy
+	Consistency
+	
+	Iterate for better results:
+	
+You provide an initial prompt.
+
+The AI tool responds with an output.
+
+You evaluate the effectiveness of the AI-generated response.
+
+You refine your request based on what worked and what didn't.
+
+The process repeats until the AI tool produces the desired results.
+	
+	
+		
+
+	Verbes:
+
+	LLM can do Content Creations like Articles - use Verbes like CREATE!
+	LLM can be used for summarization so use the verb SUMMARIZE 
+	Classification is also an example or Extraction or Translation 
+
+
+
+	
+
+Discover the Art of Prompting
+
+
+Examples: adding examples to Prompting can enhance the Output 
+	Zero Shot: no Examlples 
+	One Shot: one examplle 
+	N-Shot: N-Examples 
+
+Chain of though prompting: 
+
+	LLM Needs to explain the process, words used 
+	- Explain your reasoning
+	- Go step by step 
+
+	example: Create a bulleted list outlining the major duties and responsibilities of a new entry-level design hire at an ad agency.""""" Explain your reasoning step by step.""""
+
+
+Prompt chaining: Problem will be devided into steps, Output of the first prompt is the Input of the second 
+
+This technique involves three key steps:
+
+1 Task analysis: Start by breaking down your complex task into a series of smaller, logical steps.
+
+2 Initial prompting: Craft a focused prompt that asks the AI to complete just the first step.
+
+3 Input/output flow: Use the output from the first prompt as the context for the second prompt. Continue this iterative flow until you complete the task. 
+
+EXAMPLE:
+
+Prompt 1: I'm going to [city name] for 3 days. I like art, historical sites, and parks. Suggest a few well-known places I could visit on my trip.
+
+Prompt 2 (chained from Prompt 1): Using those locations, create a logical, day-by-day itinerary that minimizes travel time.
+
+Prompt 3 (chained from Prompt 2): For euch day of the itinerary, suggest a few restaurants located near each of the suggested locations.
+
+
+
+Combining prompt chaining with chain-of-thought:
+
+Prompt 1: I am hosting a book club and would like fantasy book recommendations for people that are new to reading this genre. Suggest a few books that we could use.
+
+Prompt 2 (using prompt chaining and chain-of-thought prompting): From that list, can you suggest which book you would recommend if we are looking for a fast-paced read? Explain your reasoning.
+
+
+PROBLEMS:
+AI tools can struggle to remember context from earlier parts of the conversation as the prompt chain grows longer. This can lead to:
+
+- Inconsistent responses
+
+- Overlooking important details from earlier prompts
+
+- Difficulty maintaining the overall objective of the Task
+
+SOLUTIONS:
+- Use checkpoints: Periodically ask the AI to provide a brief summary of the overall goal.
+
+- Work on sub-tasks: Divide very complex tasks into even smaller sub-tasks so that you can treat each as its own shorter chain before moving on to the next.
+
+- Recap and redirect: If you notice an AI tool is deviating from the original goal, provide a recap of the essential information and redirect it back to the main objective.
+
+
+
+
+An allocative harm is a wrongdoing that occurs when an AI system's use or behavior withholds opportunities or resources or 
+information in domains that affect a person's wellbeing. For example, if AI tools don't provide the same
+ information to everyone, some people may be denied access to education, healthcare, fair housing, or other opportunities
+
+
+ The next type of harm is representational harm, an AI tool's reinforcement of the subordination of social groups based on their identities. For instance, the AI powering a language translation app might
+  associate certain words with feminine or masculine traits, and choose gender specific translations based on those assumptions
+
+  Another type of harm associated with AI is social system harm. This harm refers to macro-level societal effects that amplify existing class, power, or privilege disparities or cause physical harm as a result of the development or use of AI tools. As AI-generated images become more realistic, there's concern about the spread of disinformation, including
+   deep fakes. Deepfakes are AI generated fake photos or videos of real people saying or doing things that they did not do. 
+
+
+
+
+nterpersonal harm, which is the use of technology to create a disadvantage to certain people that negatively affects their relationships with others or causes a loss of one's sense of self and agency.
+
+
+
+Drift is the gradual decline in an AI tool's accuracy and relevance as the real world changes. You might observe drift in two ways:
+
+Factual drift: This is when the AI's becomes less accurate over time because of its knowledge cutoff. For example, an AI's advice on "current fashion trends" may become less useful the further you get from its training date.
+
+Behavioral drift: This refers to changes in an AI tool's behavior over time. As developers update models, you might notice that the tool's formatting, tone, or conversational style changes, even when you use the same prompts.
+
+
+
+Here are a few ways to manage and mitigate both kinds of drift:
+
+Provide accurate and up-to-date context in your prompts, especially for topics that change quickly like market trends or technology.
+
+Keep chats focused by starting a new conversation for each specific task. This also helps to reset the context if a conversation becomes too long or the output starts to feel off-topic.
+
+Be explicit with clear and specific instructions in your prompts.
+
+Beining Human in the loop
+
+
+
+
+
+
+
+
+
