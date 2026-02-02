@@ -1,0 +1,168 @@
+#### Modul 1: Introduction to Model-Based Systems Engineering
+
+Learning Sequence
+The following topics are covered in the course:
+
+Systems, Systems of Systems, System Thinking, System Models, and System Architecture
+
+An Introduction to MBSE, MBD, and MBE
+
+iMBSE, Methodology, and System Modeling Language
+
+SysML
+
+System Modeling Language Arcadia and Capella, System Modeling Tools, & MBSE Solution ROI
+
+
+The content focuses on Model-Based Systems Engineering (MBSE) and its application in managing complex systems through the concept of Systems of Systems (SoS).
+
+Managing Complexity
+
+SoS allows engineers to decompose complex problems into smaller, manageable parts, addressing interactions and dependencies among subsystems.
+This approach facilitates the design of large-scale systems with interconnected components.
+Enhancing Interoperability
+
+SoS ensures that different subsystems can work together seamlessly, which is crucial when integrating systems developed by various organizations or incorporating legacy systems with new technologies.
+It promotes collaboration and integration across diverse technological environments.
+Enabling Flexibility and Scalability
+
+Designing with an SoS perspective allows for easier adaptation to changes in requirements, technology, or environment.
+The modular nature of SoS simplifies the addition, removal, or modification of components without compromising overall system functionality.
+
+
+Definitions of a System
+
+INCOSE defines a system as an integrated set of elements that accomplish a defined objective, including hardware, software, processes, and people.
+The ISO/IEC/IEEE 15288 standard describes a system as a combination of interacting elements organized to achieve specific purposes.
+Elements of a System
+
+A system comprises various elements such as people, hardware, software, facilities, policies, and documents.
+The value of a system arises from the relationships among its interconnected parts, which produce results unattainable by the individual elements alone.
+
+managing system complexity: decomposition, abstraction, and hierarchies.
+
+Decomposition
+
+Involves breaking a system into progressively smaller units, starting from the system level down to atomic elements.
+Each level of decomposition includes subsystems, components, parts, and elements.
+Abstraction
+
+Used to characterize system elements based on their functional and formal attributes.
+At the systems level, abstractions help focus on functional architectures.
+Hierarchies
+
+Organize information from system decomposition in a structured manner.
+They manage complexity, highlight relevant information for designers, and provide a clear structure for system descriptions.
+
+Differences Between Systems and Systems of Systems
+
+Systems have clear stakeholders and objectives, while systems of systems involve multiple stakeholders with potentially conflicting interests and objectives.
+Systems operate under a single life cycle and ownership, whereas systems of systems have multiple life cycles and independent ownership.
+Types of Systems of Systems
+
+Directed: Managed to fulfill specific purposes with subordinated component systems.
+Acknowledged: Recognized objectives with independent ownership and cooperative agreements.
+Collaborative: Voluntary interaction among systems to achieve agreed-upon purposes.
+Virtual: Lacks central management, relying on invisible mechanisms for coordination.
+Applications and Characteristics
+
+Applications include transportation, energy, healthcare, defense, and disaster response.
+Key characteristics involve interdisciplinary problems, independent operation of elements, ambiguous initial requirements, and ongoing complexity in management and engineering.
+
+Understanding System Thinking: A Simple Explanation
+
+In this week's lesson, we learned about system thinking, which is a way of looking at things as a whole rather than just focusing on individual parts. Imagine a bicycle: instead of just thinking about the wheels or the handlebars separately, system thinking encourages us to see how all the parts work together to help you ride smoothly. It’s about understanding how each piece connects and contributes to the overall function of the system.
+
+For example, if we take an electric skateboard, we can break it down into different parts like the deck, wheels, and motor. Each part has its own job, but they all need to work together for the skateboard to function properly. By understanding these connections, we can better analyze how the skateboard operates and even improve its design. 
+
+Definitions of System Models
+
+An abstract representation of specific aspects of a subject used to address concerns with structured semantics.
+A simplified version of a concept, phenomenon, relationship, structure, or system.
+A graphical, mathematical, or physical representation.
+An abstraction of reality by eliminating unnecessary components.
+Objectives of a Model
+
+To facilitate understanding of complex systems.
+To aid in decision-making and examine what-if scenarios.
+Types of System Models
+
+High-level models: Simple representations for basic analysis and communication, such as mathematical formulas and visual diagrams.
+Low-level models: More complex representations for advanced analysis, like 3D CAD models, detailing properties such as geometry.
+Core Model in MBSE
+
+The system architecture model focuses on overall system requirements, behavior, structure, properties, and interconnections, essential for understanding stakeholder needs and system functionality.
+
+Understanding System Architecture
+
+System architecture is defined in two ways: as a structured representation of a product that is domain and implementation agnostic, and as the embodiment of a concept that allocates functions to elements and defines their relationships.
+It is crucial in the early stages of development, starting from planning to production ramp-up, involving stages like concept development and system-level design.
+Purpose of System Architecture
+
+It communicates direction, including technology selection, and partitions the system into subsystems or functional groups.
+It facilitates subsystem assignments, creates communication between subsystems, and tracks subsystem attributes to optimize cost and quality.
+Key Concepts: Hierarchy and Decomposition
+
+Hierarchy refers to the arrangement of classes ranked above one another, while decomposition involves dividing a system into smaller parts.
+Both concepts are interconnected and help in understanding and managing the complexity of engineering systems
+
+
+
+The course content focuses on the architecture definition process in systems engineering.
+
+Architecture Definition Process
+
+The workflow begins with functional analysis, followed by concept generation, and culminates in system architecture.
+Key elements to study include form, function, functional analysis, and various architectural structures.
+Understanding Form
+
+Form describes what a system is, contrasting with function, which describes what a system does.
+It consists of two aspects: decomposition (breaking down the system into subsystems) and structure (the connections and spatial arrangement of these subsystems).
+Form Structure and Examples
+
+Form structure models aspects like connectivity, sequence, and location among subsystems.
+The Design Structure Matrix (DSM) is introduced as a tool to represent system elements and their interrelationships, exemplified through a coffee machine's architecture.
+
+
+Process and Operand Representation
+
+Processes are represented as labels inside oval symbols, while operands are labeled within rectangular symbols.
+Relationships between processes and operands can be categorized into three types: creating, consuming, and affecting.
+Types of Relationships
+
+Creating a New Operant: A process (e.g., brewing coffee) creates an operand (e.g., coffee).
+Consuming an Existing Operant: A process (e.g., assembling) consumes an operand (e.g., auto parts), transforming it into a new object (e.g., a vehicle).
+Affecting an Operant: A process (e.g., painting) affects an operand (e.g., a car) by changing its attributes (e.g., color).
+Functions in Systems
+
+Primary Function: The main function for which a system is built (e.g., brewing in a coffee maker).
+Externally Delivered Function: Functions that cross system boundaries and influence external contexts.
+Internal functions and their relationships define the functional architecture of a system, with techniques like reverse engineering used to identify them.
+
+
+Understanding Conical Systems
+
+A Conical System is created by adding an instrument to the function notation, linking the instrument to the process it enables (e.g., a coil enabling the heating of water).
+The effect of a process on an operand can be illustrated by showing the operand's states before and after the process (e.g., water changing from cold to hot).
+OPM System Architecture Diagrams
+
+Three OPM diagrams illustrate increasing detail: the basic architecture mapping function to form, an architecture with operand states (cold vs. hot), and the most detailed diagram showing attributes like temperature.
+Functional architecture consists of functions and interactions, with processes representing interactions between operands (e.g., storing cold water).
+Logical vs. Physical Architecture
+
+Logical architecture models how a system will work without technology, while physical architecture includes technological solutions.
+System architecture combines functional architecture and formal structure, mapping functions to forms and defining relationships among elements.
+
+Verification and Validation
+
+Verification checks if the product or system is built correctly, ensuring compliance with specifications and standards.
+Validation ensures the right product is built by examining user requirements and confirming the product meets end-user needs.
+Design Verification and Validation Plan
+
+This plan is created early in the design process and is updated throughout the system's lifecycle as new risks are identified.
+Tasks include in-house tests, customer tests, inspections, and risk mitigation through Failure Modes and Effects Analysis.
+Optimization of Systems
+
+The optimization process begins by formulating a design problem, typically minimizing an objective function under certain constraints.
+Optimization techniques are categorized into conventional methods (like Design of Experiments and Mathematical Iterative Search) and non-conventional methods (like Metaheuristic search).
+#### Modul 2:
