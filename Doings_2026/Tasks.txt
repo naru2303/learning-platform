@@ -1,0 +1,7 @@
+
+- Implemented all Cubicle II Service on SCCB Unit
+- Took care of the whole communication between SCCBUnit and COM210 
+- Synchronizing the COM with the SCCB Team 
+- Reworked whole COM Hiearchie 
+- Took maintenace over CubicleII Repository (from Holger Specht)
+- Did the Opensource Clearing for whole DC-SCCB Breaker (COM210 and SCCB-Unit)
