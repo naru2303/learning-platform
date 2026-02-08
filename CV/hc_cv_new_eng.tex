@@ -1,0 +1,186 @@
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LuxSleek-CV 1.1 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+%
+% 1.1: added tracking and letter-spacing for prettier lower caps, added `~` for language levels
+% 1.0: initial release
+%
+% This template fills the gap in the available variety of templates
+% by proposing something that is not a custom class, not using any
+% hard-coded settings deeply hidden in style files, and provides
+% a handful of custom command definitions that are as transparent as it gets.
+% Developed at the University of Luxembourg.
+%
+% *NOTHING IS HARCODED, and never should be.*
+%
+% Target audience: applicants in the IT industry, or business in general
+%
+% The main strength of this template is, it explicitly showcases how
+% to break the flow of text to achieve the most flexible right alignment
+% of dates for multiple configurations.
+
+\documentclass[11pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\usepackage{ragged2e}        % Provides \justifying
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn't got broken into lines
+\newcommand{\is}{\par\vskip.5ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{cvblue}#1}\par%
+     \vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+
+\begin{document}
+
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\setlength{\parskip}{1ex}
+
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+%  Left column -- top dark rectangle
+\colorbox{cvblue}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue!90}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][293mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{1.5ex}
+
+% ===== Name zentriert über dem Foto =====
+\begin{center}
+{\Large Houssem \textbf{\textsc{Chekili}}}
+\end{center}
+
+\vspace{-1.5ex}
+
+% ===== Profilfoto zentral =====
+\begin{center}
+\includegraphics[width=0.45\textwidth]{prof.png}
+\end{center}
+
+
+\vspace{0.1ex}
+
+% ===== Profil =====
+\headleft{Profil}
+\small
+\setlength{\parskip}{0.1ex}
+\setlength{\baselineskip}{1.25\baselineskip}
+Embedded Software Engineer mit Schwerpunkt auf skalierbarer Firmware-Entwicklung und Software-Architektur.\newline
+Expertise in RTOS, Embedded-Linux sowie DevOps und AI-gestützter Qualitätssicherung.
+ISTQB-zertifiziert mit Fokus auf testgetriebene Entwicklung und nachhaltige Codequalität.
+\raggedright
+
+
+\headleft{Persönliche Angaben}
+\small % To fit more content
+\textbf{Adresse:} Ostpreußendamm 134, 12207 Berlin, Deutschland \\[0.5ex]
+\textbf{Geburtsdatum:} 16.11.1996\\[0.5ex]
+\textbf{Mobil:} +49 15771292846\\[0.5ex]
+\textbf{E-Mail:} houssem.chekili@outlook.de\\[0.5ex]
+\textbf{LinkedIn:} \href{https://www.linkedin.com/in/houssem-c-5336ab151}{houssem-chekili}\\[0.5ex]
+\textbf{Nationalität:} Deutsch und Tunesisch\\[0.3ex]
+\textbf{Sprachen:}\\
+Deutsch \hspace{3.0ex}(Verhandlungssicher)\\
+Englisch \hspace{2.9ex}(Verhandlungssicher)\\
+Französisch (Muttersprache)\\[0.0ex]
+Arabisch \hspace{2.7ex}(Muttersprache)\\[0.0ex]
+\headleft{Fähigkeiten}
+
+\textbf{Programmiersprachen:}\\
+C, C++, Rust, Python, C\#, VHDL, Shell\\[0.5ex]
+
+\textbf{Embedded Systems:}\\
+ARM Cortex-M/A, x86, RISC-V\\
+Embedded-Linux, ZephyrRTOS, FreeRTOS\\[0.5ex]
+
+\textbf{Industrielle Protokolle:}\\
+Modbus RTU/TCP, Profinet IO, Profibus, CANopen\\[0.5ex]
+
+\textbf{Tools \& DevOps:}\\
+CMake, Git, GitLab CI/CD, Docker\\
+GTest, Catch2, GMock, CMock\\[0.5ex]
+
+\textbf{AI \& Innovation:}\\
+GenAI Integration, LLM APIs, Prompt Engineering\\[0.5ex]
+
+\textbf{Methoden:}\\
+Agile/Scrum, TDD, Model-Based Design (MATLAB Simulink)
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+\vspace{2ex}
+
+\headright{Berufserfahrung}
+
+\textsc{Embedded Software Ingenieur}, \textit{Siemens AG}, Berlin \\\dates{Februar 2023 -- Heute} \\[0.5ex]
+\raggedright \smaller{Lead-Entwickler für DC/AC-Leistungsschalter (3WA, DC-SCCB): Verantwortung für Architektur und Implementierung von Schutzalgorithmen, industriellen Kommunikationsstacks (Modbus, Profinet, Profibus, CAN) sowie Einhaltung relevanter Normen und Zertifizierungen (UL, TÜV).} \\[0.5ex]
+\raggedright \smaller{Vollständige Migration von Siemens-Projekten von ClearCase zu GitLab inkl. CI/CD-Pipelines; Reduktion der Deployment-Zeit von ca. 3 Stunden (ClearCase und Jenkins) auf maximal ca. 30 Minuten (GitLab CI/CD) – ca. 83\% Zeitersparnis.} \\[0.5ex]
+\raggedright \smaller{Teamleiter der Unit-Test-Gruppe (5 Entwickler), Steigerung der Code-Coverage von 45\% auf 96\% in 12 Monaten und Integration von State of the Art Unit-Test Tooling.} \\[0.5ex]
+\raggedright \smaller{Entwicklung von GenAI-basierten Tools zur Verbesserung der Code-Qualität bei Siemens Produkte.}\\[0.5ex]
+\raggedright \smaller{Entwicklung eines Wissensdatenbank-Chatbots für abteilungsspezifische Anwendungen.}\\[2ex]
+
+
+\textsc{Werkstudent}, \textit{IAV GmbH}, Berlin\newline \dates{November 2022 -- Januar 2023} \\[0.5ex]
+\raggedright \smaller{Firmware-Entwicklung für autonomen Ernteroboter mit C/C++ sowie Entwicklung von Unit-Tests mit Python.} \\[2ex]
+
+\textsc{Werkstudent}, \textit{Siemens Mobility GmbH}, Berlin \dates{März 2022 -- Oktober 2022} \\[0.5ex]
+\raggedright \smaller{Integration von LiDAR-, 3D- und 2D-Kamera-Sensoren in ADAS mit ROS Framework (C++, Python).} \\[0.5ex]
+\raggedright \smaller{Entwicklung von Unit-Tests mit C++ und Python.} \\[2ex]
+
+\textsc{Dualer Werkstudent}, \textit{Witt Solutions GmbH}, Elstal bei Berlin \dates{Mai 2019 -- Februar 2022} \\[0.5ex]
+\raggedright \smaller{Firmware-Entwicklung für verschiedene Produkte in C/C++.} \\[0.5ex]
+\raggedright \smaller{Vertreter von WITT Solutions im Assets4Rail-Projekt als Firmware-Entwickler.} \\[0.5ex]
+
+\headright{Ausbildung}
+
+\textsc{Master of Engineering M.Eng in Computer Engineering}, \textit{Berliner Hochschule für Technik}, Berlin \newline \dates{Oktober 2021 -- Februar 2023} \\[0.5ex]
+\textit{Abschlussnote: 1.7}\\
+\raggedright \smaller{Vertiefung in eingebetteten Systemen und heterogenen Rechnerarchitekturen.} \\[0.5ex]
+\raggedright \smaller{\textbf{Masterarbeit:} Hardware-beschleunigte Objektverfolgung im 3D-Raum mittels FPGA auf Co-Design-Prozessor.} \\[1ex]
+
+\textsc{Bachelor of Engineering B.Eng in Elektrotechnik}, \textit{Berliner Hochschule für Technik}, Berlin \newline \dates{Oktober 2017 -- September 2021} \\[0.5ex]
+\textit{Abschlussnote: 1.0}\\
+\raggedright \smaller{Grundlagen der Computer- und Elektrotechnik mit Schwerpunkt digitale Domäne.} \\[0.5ex]
+\raggedright \smaller{\textbf{Bachelorarbeit:} Entwicklung einer CANopen-Bibliothek für sicherheitskritische, echtzeitfähige Systeme im Personenschutz.} \\[0.5ex]
+
+\end{minipage}
+
+\end{document}

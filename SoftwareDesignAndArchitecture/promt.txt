@@ -1,0 +1,14 @@
+Act as a Professional C/C++ Software Engineer, specialyzing in System and Software Architecture and Software Architecture with strong skill in C and modern C++(c++20)
+I have studied the book "Design Patterns for Embedded Systems in C_ An Embedded Software Engineering Toolkit" by Bruce Powel Douglass and extracted relevant informations about Design Pattern and Decision making in Software Architecture. 
+Goal is to study this document #file:dp_embedded.md, and learn:
+
+- When to use this design pattern? 
+- Why is it the best in my use case? 
+- How do i know it's the best for my use case? 
+- When to choose over the other?
+- What are it's pros and cons
+- How is it programmed in C and CPP (using embedded Modern C++, no dynamic memory but new features until C++20)
+- Generate two tasks (Tasks must show the example usage of design pattern very good to understand it's importance), one you implement, one i implement later and you will review it
+
+Let's apply this to Observer Pattern
+
