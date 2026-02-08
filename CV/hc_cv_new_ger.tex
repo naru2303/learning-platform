@@ -1,0 +1,143 @@
+\documentclass[10pt]{article}
+
+\usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.4in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{ragged2e}
+\usepackage{array}
+
+% --- Custom Commands mimicking standard resume templates ---
+
+\newenvironment{rSection}[1]{
+  \vspace{0.3em}
+  \hrule
+  \vspace{0.3em}
+  \MakeUppercase{\bf #1}
+  \vspace{0.3em}
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.0em}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+  }
+  \item[]
+}{
+  \end{list}
+}
+
+\newenvironment{rSubsection}[4]{
+  {\bf #1} \hfill {#2} \\
+  {\em #3} \hfill {\em #4} \\
+  \vspace{-0.6em}
+  \begin{itemize}[leftmargin=*, nosep, itemsep=1pt]
+}{
+  \end{itemize}
+  \vspace{0.3em}
+}
+
+\newcommand{\rTitle}[1]{
+  \begin{center}
+    {\Huge \bf #1}
+  \end{center}
+}
+
+\newcommand{\sectionskip}{\vspace{0.3em}}
+
+% Suppress page numbers
+\pagestyle{empty}
+
+\begin{document}
+
+% --- Header with Photo ---
+\noindent
+\begin{minipage}[c]{0.75\textwidth}
+    {\Huge \bf Houssem Chekili} \\[0.3em]
+    \href{mailto:houssem.chekili@outlook.de}{houssem.chekili@outlook.de} \textbullet\ +49 1577 1292846 \\
+    Ostpreußendamm 134, 12207 Berlin, Deutschland \\
+    \href{https://www.linkedin.com/in/houssem-c-5336ab151}{linkedin.com/in/houssem-chekili}
+\end{minipage}%
+\begin{minipage}[c]{0.25\textwidth}
+    \raggedleft
+    \includegraphics[width=2.2cm]{prof.png} % Photo at top right
+\end{minipage}
+
+\vspace{0.3em}
+
+% --- Objective / Profil ---
+\begin{rSection}{PROFIL}
+    Embedded Software Engineer mit Schwerpunkt auf skalierbarer Firmware-Entwicklung und Software-Architektur.
+    Expertise in RTOS, Embedded-Linux sowie DevOps und AI-gestützter Qualitätssicherung.
+    ISTQB-zertifiziert mit Fokus auf testgetriebene Entwicklung und nachhaltige Codequalität.
+\end{rSection}
+
+% --- Experience ---
+\begin{rSection}{BERUFSERFAHRUNG}
+
+\begin{rSubsection}{Siemens AG}{Berlin}{Embedded Software Ingenieur}{Feb 2023 -- Heute}
+    \item Lead-Entwickler für DC/AC-Leistungsschalter (3WA, DC-SCCB): Architektur und Implementierung von Schutzalgorithmen, Komm.-Stacks (Modbus, Profinet, Profibus, CAN) sowie Norm-Einhaltung (UL, TÜV).
+    \item Migration auf GitLab CI/CD: Reduktion der Deployment-Zeit von 3h auf 30min (83\% Zeitersparnis).
+    \item Teamleiter Unit-Tests (5 Entwickler): Steigerung der Code-Coverage von 45\% auf 96\% in 12 Monaten.
+    \item Entwicklung von GenAI-Tools für Code-Qualität und Wissensdatenbank-Chatbots für interne Anwendungen.
+\end{rSubsection}
+
+\begin{rSubsection}{IAV GmbH}{Berlin}{Werkstudent}{Nov 2022 -- Jan 2023}
+    \item Firmware-Entwicklung (C/C++) für autonomen Ernteroboter und Unit-Tests (Python).
+\end{rSubsection}
+
+\begin{rSubsection}{Siemens Mobility GmbH}{Berlin}{Werkstudent}{März 2022 -- Okt 2022}
+    \item Integration von LiDAR/Kamera-Sensoren in ADAS (ROS, C++, Python) und Unit-Test Entwicklung.
+\end{rSubsection}
+
+\begin{rSubsection}{Witt Solutions GmbH}{Elstal bei Berlin}{Dualer Werkstudent}{Mai 2019 -- Feb 2022}
+    \item Firmware-Entwicklung (C/C++) für diverse Produkte; Assets4Rail-Projektbeteiligung.
+\end{rSubsection}
+
+\end{rSection}
+
+% --- Projects ---
+\begin{rSection}{PROJEKTE}
+    \item TBD: Hier werden spannende Projekte aufgelistet.
+\end{rSection}
+
+% --- Education ---
+\begin{rSection}{AUSBILDUNG}
+
+{\bf Master of Engineering (M.Eng) in Computer Engineering} \hfill {Okt 2021 -- Feb 2023} \\
+Berliner Hochschule für Technik, Berlin \hfill \textit{Abschlussnote: 1.7} \\
+\textit{Schwerpunkt:} Eingebettete Systeme und heterogene Rechnerarchitekturen. \\
+\textit{Thesis:} Hardware-beschleunigte Objektverfolgung im 3D-Raum (FPGA Co-Design).
+
+\vspace{0.2em}
+
+{\bf Bachelor of Engineering (B.Eng) in Elektrotechnik} \hfill {Okt 2017 -- Sep 2021} \\
+Berliner Hochschule für Technik, Berlin \hfill \textit{Abschlussnote: 1.0} \\
+\textit{Thesis:} CANopen-Bibliothek für sicherheitskritische Echtzeitsysteme.
+
+\end{rSection}
+
+% --- Skills ---
+\begin{rSection}{FÄHIGKEITEN}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{3ex}} l }
+Sprachen            & C, C++, Rust, Python, C\#, VHDL, Shell \\
+Embedded            & ARM Cortex-M/A, x86, RISC-V, Emb.-Linux, Zephyr, FreeRTOS \\
+Protokolle          & Modbus RTU/TCP, Profinet, Profibus, CANopen \\
+Tools \& DevOps     & CMake, Git, GitLab CI/CD, Docker, GTest, GMock \\
+AI \& Innovation    & GenAI Integration, LLM APIs, Prompt Engineering \\
+Methoden            & Agile/Scrum, TDD, Model-Based Design (Simulink) \\
+Sprachen            & Deutsch (Verhandlungssicher), Englisch (Verhandlungssicher), \\
+                    & Französisch (Muttersprache), Arabisch (Muttersprache) \\
+\end{tabular}
+
+\end{rSection}
+
+% --- Leadership ---
+\begin{rSection}{FÜHRUNGSKOMPETENZEN}
+    \item TBD: Hier werden Führungsqualitäten und außerberufliches Engagement aufgelistet.
+\end{rSection}
+
+\end{document}
