@@ -1,0 +1,135 @@
+\documentclass[10pt]{article}
+
+\usepackage[left=0.4in,top=0.4in,right=0.4in,bottom=0.4in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{ragged2e}
+\usepackage{array}
+
+% --- Custom Commands mimicking standard resume templates ---
+
+\newenvironment{rSection}[1]{
+  \vspace{0.3em}
+  \hrule
+  \vspace{0.3em}
+  \MakeUppercase{\bf #1}
+  \vspace{0.3em}
+  \begin{list}{}{
+    \setlength{\leftmargin}{1.0em}
+    \setlength{\parsep}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\partopsep}{0pt}
+  }
+  \item[]
+}{
+  \end{list}
+}
+
+\newenvironment{rSubsection}[4]{
+  {\bf #1} \hfill {#2} \\
+  {\em #3} \hfill {\em #4} \\
+  \vspace{-0.6em}
+  \begin{itemize}[leftmargin=*, nosep, itemsep=1pt]
+}{
+  \end{itemize}
+  \vspace{0.3em}
+}
+
+\newcommand{\rTitle}[1]{
+  \begin{center}
+    {\Huge \bf #1}
+  \end{center}
+}
+
+\newcommand{\sectionskip}{\vspace{0.3em}}
+
+% Suppress page numbers
+\pagestyle{empty}
+
+\begin{document}
+
+% --- Header with Photo ---
+\noindent
+\begin{minipage}[c]{0.75\textwidth}
+    {\Huge \bf Ines Bouazizi} \\[0.3em]
+    \textbf{Geburtsdatum:} 12.12.2000 \\
+    \textbf{Nationalit\"at:} Tunesisch \\
+    \textbf{Mobil:} +49 15734813781 \\
+    \textbf{Adresse:} Stolzenfelsstra{\ss}e 15A, 10318 Berlin, Deutschland \\
+    \textbf{E-Mail:} \href{mailto:inessbouazizi2@gmail.com}{inessbouazizi2@gmail.com} \\
+    \textbf{LinkedIn:} \href{https://www.linkedin.com/in/ines-bouazizi-48aa6b246/}{linkedin.com/in/ines-bouazizi}
+\end{minipage}%
+\begin{minipage}[c]{0.25\textwidth}
+    \raggedleft
+    \includegraphics[width=2.2cm]{cv2pic.jpg}
+\end{minipage}
+
+\vspace{0.3em}
+
+% --- Profil ---
+\begin{rSection}{PROFIL}
+    Motivierte Absolventin der Ingenieurinformatik mit fundierten Kenntnissen in Softwareentwicklung, Datenbankmanagement und agilen Projektmethoden.
+    Erfahrung in der Anwendung moderner Programmiersprachen wie C\# und Python sowie im Einsatz von Frameworks wie WPF/XAML und Django.
+    St\"arken in der Entwicklung benutzerfreundlicher Anwendungen, der Arbeit mit relationalen Datenbanken (OracleDB, SQL, SQLite) sowie in der Integration von Tools wie Jira, Confluence und Git f\"ur effiziente Teamarbeit.
+\end{rSection}
+
+% --- Berufserfahrung ---
+\begin{rSection}{BERUFSERFAHRUNG}
+
+\begin{rSubsection}{Homaris GmbH}{Berlin}{Werkstudentin im IT-Bereich}{Apr 2025 -- Jul 2025}
+    \item Unterst\"utzung der IT-Systemadministration durch organisatorische und administrative T\"atigkeiten.
+    \item \"Ubernahme des 1st-Level-Supports f\"ur Mitarbeitende sowie Verwaltung von Benutzerkonten und Zugriffsrechten.
+    \item Begleitung von Onboarding- und Offboarding-Prozessen inkl. Einrichtung und R\"uckbau von IT-Arbeitspl\"atzen.
+\end{rSubsection}
+
+\begin{rSubsection}{Siemens Mobility}{Berlin}{Assistentin im Management der Dokumentation bei Turnkey-Projekten}{Jan 2024 -- M\"ar 2025}
+    \item Erstellung, Verwaltung und Organisation von Projektdokumentationen f\"ur reibungslosen Projektverlauf.
+    \item Workshop-Erstellung: Planung, Vorbereitung und Organisation inkl. Entwicklung von Materialien und Agenden.
+    \item Recherche und Unterst\"utzung der Projektentwicklung.
+\end{rSubsection}
+
+\begin{rSubsection}{WISAG Dienstleistung AG}{Berlin}{Werkstudentin inhouse IT}{Jan 2023 -- Dez 2023}
+    \item First und Second Level Support der Anwender.
+    \item Administration verschiedener Systeme: Omnitracker, Baramundi, SAP, iRes+, MultiCash.
+    \item Automatisierung von IT-Prozessen mit PowerShell-Skripten.
+    \item Hardware- und Software-Troubleshooting.
+\end{rSubsection}
+
+\begin{rSubsection}{IC Immobilien Holding GmbH}{Berlin}{Werkstudentin im IT-Bereich}{Aug 2022 -- Dez 2022}
+    \item First und Second Level Support; Administration des Exchange Servers.
+    \item Betreuung der LAN-Netze und First Level Support f\"ur WAN-Netze.
+    \item Umsetzung der IT-Sicherheitsrichtlinien; Weiterentwicklung der Systemlandschaft.
+    \item Projektarbeit: Begleitung einer Firmenfusion (2022).
+\end{rSubsection}
+
+\end{rSection}
+
+% --- Ausbildung ---
+\begin{rSection}{AUSBILDUNG}
+
+{\bf Bachelor of Science (B.Sc) in Ingenieurinformatik} \hfill {Apr 2021 -- Jul 2025} \\
+Hochschule f\"ur Technik und Wirtschaft Berlin \\
+\textit{Schwerpunkt:} Grundlagen der Computer- und Mechatronik, insbesondere in der digitalen Dom\"ane. \\
+\textit{Thesis:} Erweiterung und Evaluierung eines KI-gest\"utzen Assistenten f\"ur Verwaltungsprozesse.
+
+\end{rSection}
+
+% --- F\"ahigkeiten ---
+\begin{rSection}{F\"AHIGKEITEN}
+\renewcommand{\arraystretch}{1.1}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{3ex}} l }
+Programmierung      & C\#, C++, Python, WPF/XAML, HTML/CSS, Django \\
+Datenbanken         & OracleDB, SQLite, SQL, Snowflake, AWS \\
+Tools               & Jira, Confluence, Git, Omnitracker, PowerBI, Microsoft Office \\
+Methoden            & Agile Softwareentwicklung, Scrum, Kanban, IoT \\
+CAD                 & 2D-CAD AutoCad, 3D-CAD Inventor \\
+Sprachen            & Deutsch, Franz\"osisch, Englisch, Arabisch \\
+\end{tabular}
+
+\end{rSection}
+
+\end{document}

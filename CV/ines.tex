@@ -1,0 +1,164 @@
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LuxSleek-CV 1.1 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+%
+% 1.1: added tracking and letter-spacing for prettier lower caps, added `~` for language levels
+% 1.0: initial release
+%
+% This template fills the gap in the available variety of templates
+% by proposing something that is not a custom class, not using any
+% hard-coded settings deeply hidden in style files, and provides
+% a handful of custom command definitions that are as transparent as it gets.
+% Developed at the University of Luxembourg.
+%
+% *NOTHING IS HARCODED, and never should be.*
+%
+% Target audience: applicants in the IT industry, or business in general
+%
+% The main strength of this template is, it explicitly showcases how
+% to break the flow of text to achieve the most flexible right alignment
+% of dates for multiple configurations.
+
+\documentclass[11pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip.5ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{3ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{cvblue}#1}\par%
+     \vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+
+\begin{document}
+
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+%  Left column -- top dark rectangle
+\colorbox{cvblue}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue!90}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][293mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{2.5ex}
+
+\hspace*{5.7ex}\Large Ines \textbf{\textsc{Bouazizi}} \normalsize 
+
+% Centering without extra vertical spacing
+\null\hfill\includegraphics[width=0.45\textwidth]{cv2pic.jpg}\hfill\null
+
+\vspace*{0.5ex} % Extra space after the picture
+
+\headleft{Profil}
+\small
+Motivierte Absolventin der Ingenieurinformatik mit fundierten Kenntnissen in Softwareentwicklung, Datenbankmanagement und agilen Projektmethoden. Ich bringe Erfahrung in der Anwendung moderner Programmiersprachen wie C\# und Python sowie im Einsatz von Frameworks wie WPF/XAML und Django mit. Meine Stärken liegen in der Entwicklung benutzerfreundlicher Anwendungen, der Arbeit mit relationalen Datenbanken wie OracleDB,SQL und SQLite sowie in der Integration von Tools wie Jira, Confluence und Git für effiziente Teamarbeit.
+
+
+\headleft{Persönliche Angaben}
+\small % To fit more content
+\textbf{Adresse:} Stolzenfelsstraße 15A, 10318 Berlin, Deutschland\\[0.5ex]
+\textbf{Geburtsdatum:} 12.12.2000\\[0.5ex]
+\textbf{Mobil:} +49 15734813781\\[0.5ex]
+\textbf{E-Mail:} inessbouazizi2@gmail.com\\[0.5ex]
+\textbf{LinkedIn:} \href{https://www.linkedin.com/in/ines-bouazizi-48aa6b246/}{https://www.linkedin.com/in/ines-bouazizi-48aa6b246/}\\[0.5ex]
+\textbf{Nationalität:} Tunesisch\\[0.5ex]
+\textbf{Sprachen:} Deutsch, Französisch, Englisch und Arabisch\\[0.5ex]
+
+\headleft{Fähigkeiten}
+\begin{itemize}
+\item C\#, C++, Python, WPF Framework/XAML
+\item HTML/CSS, Django
+\item OracleDB, SQLite, SQL
+\item Snowflake, AWS
+\item Jira, Confluence, Git, Omnitracker
+\item Microsoft Office , PowerBI
+\item Agile Softwareentwicklung, Scrum, Kanban
+\item IoT
+\item 2D-CAD AutoCad
+\item 3D-CAD Inventor
+\end{itemize} 
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+\vspace{2ex}
+
+\headright{Berufserfahrung}
+
+\textsc{Werkstudentin im IT-Bereich}, \textit{Homaris GmbH}, Berlin \\
+\dates{April 2025 -- Juli 2025} \\[0.5ex]
+\raggedright \smaller{Unterstützung der IT-Systemadministration durch organisatorische und administrative Tätigkeiten.} \\[0.5ex]
+\raggedright \smaller{Übernahme des 1st-Level-Supports für Mitarbeitende sowie Verwaltung von Benutzerkonten und Zugriffsrechten.} \\[0.5ex]
+\raggedright \smaller{Begleitung von Onboarding- und Offboarding-Prozessen, einschließlich Einrichtung und Rückbau von IT-Arbeitsplätzen.} \\[1ex]
+
+\textsc{Assistentin im Management der Dokumentation bei Turnkey-Projekten},\textit{Siemens Mobility}, Berlin \dates{Januar 2024 -- März 2025} \\[0.5ex]
+\raggedright \smaller{Unterstützung bei der Dokumentation in Turnkey-Projekten: Aktive Mitwirkung bei der Erstellung, Verwaltung und Organisation von Projektdokumentationen, um einen reibungslosen und effizienten Projektverlauf sicherzustellen.} \\[0.5ex]
+\raggedright \smaller{Workshop-Erstellung: Planung, Vorbereitung und Organisation von Workshops, einschließlich der Entwicklung von Materialien und Agenden.} \\[0.5ex]
+\raggedright \smaller{Recherche und Unterstützung der Projektentwicklung.} \\[1ex]
+
+
+\textsc{Werkstudentin inhouse IT}, \textit{WISAG Dienstleistung AG}, Berlin \dates{Januar 2023 -- Dezember 2023} \\[0.5ex]
+\raggedright \smaller{First und Second Level Support der Anwender.} \\[0.5ex]
+\raggedright \smaller{Administration verschiedene Systeme wie Omnitracker,Baramundi,SAP,iRes+,MultiCash.} \\[0.5ex]
+\raggedright \smaller{Automatisierung von IT‑Prozessen mit PowerShell Skripte.} \\[0.5ex]
+\raggedright \smaller{Hardware und Software Troubleshooting.} \\[1ex]
+
+\textsc{Werkstudentin in IT Bereich}, \textit{IC Immobilien Holding GmbH}, Berlin \dates{August 2022 -- Dezember 2022} \\[0.5ex]
+\raggedright \smaller{First und Second Level Support der Anwender} \\[0.5ex]
+\raggedright \smaller{Administration des Exchange Servers} \\[0.5ex]
+\raggedright \smaller{Betreuung der LAN‑Netze unserer Standorte} \\[0.5ex]
+\raggedright \smaller{First Level Support für die WAN‑Netze und Steuerung der Netzbetreiber} \\[0.5ex]
+\raggedright \smaller{Umsetzung der IT‑Sicherheitsrichtlinien} \\[0.5ex]
+\raggedright \smaller{Weiterentwicklung der Systemlandschaft der IC Immobilien Gruppe} \\[0.5ex]
+\raggedright \smaller{Projektarbeit: Begleitung einer Firmenfusion (2022)} \\[-0.5ex]
+
+\headright{Ausbildung}
+
+\textsc{Bachelor of Science B.Sc in Ingenieurinformatik}, \textit{Hochschule für Technik und Wirtschaft Berlin} \newline \dates{April 2021 -- Juli 2025} \\[0.5ex]
+\raggedright \smaller{Erwerb der Grundlagen der Computer- und Mechatronik, insbesondere in der digitalen Domäne.} \\[0.5ex]
+\raggedright \smaller{\textbf{Bachelorarbeit:} Erweiterung und Evaluierung eines
+ KI-gestützen Assistenten für Verwaltungsprozesse.} \\[0.5ex]
+
+%\headright{Hobbys}
+
+%$#\textit{Reisen, Sport, Musik}
+\end{minipage}
+
+\end{document}
