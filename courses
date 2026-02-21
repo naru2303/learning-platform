@@ -1,13 +1,247 @@
 Introduction to GitHub Copilot
 "Software Design and Architecture Specialization" by University of Alberta
- "Model-Based Systems Engineering" by University of Colorado Boulder
- iSAQB-F 
- iSAQB-A 
- Cloud Computing Specialization" (University of Illinois)
- "Secure Software Design Specialization" (University of Colorado)
+Hurix Digital - Advanced Architectures in Embedded Software Design
+CU Boulder - Embedded Software and Hardware Architecture
+CU Boulder - Real-Time Embedded Systems Specialization
+"Secure Software Design Specialization" (University of Colorado)
+iSAQB-F 
+iSAQB-A 
+
+"Model-Based Systems Engineering" by University of Colorado Boulder
+Cloud Computing Specialization" (University of Illinois)
  
  Operational
  ➕ LangChain for LLM Development (2 weeks)
 ➕ MLOps Fundamentals (6 weeks)
 ➕ System Design Interview prep (4 weeks)
 ➕ Embedded AI/TinyML (8 weeks) - Recommended specialization
+
+
+
+
+Pratice
+Month 1: Refactor existing project into layers
+         └─> Deliverable: Architecture diagram + code
+
+Month 2: Implement 3 design patterns in real code
+         └─> Deliverable: GitHub repo with patterns
+
+Month 3: Design a multi-MCU system (paper design)
+         └─> Deliverable: System architecture document
+
+Month 4: Create test strategy for one project
+         └─> Deliverable: Unit tests + mock framework
+
+Month 5: Contribute to open-source embedded project
+         └─> Deliverable: Merged PR
+
+Month 6: Review 3 embedded projects (architecture analysis)
+         └─> Deliverable: Architecture review documents
+
+
+Documentation
+
+C4 Model (Context, Container, Component, Code)
+Architecture Decision Records (ADRs)
+
+Interface Control Documents (ICDs)
+
+Plantuml 
+Drawio
+Mermaid
+Wavedrom for digital bus signal
+Python script to generate memory map
+
+arc42 Templat
+
+1. ✅ Draw.io (desktop app)
+   └─ For: System architecture, block diagrams, deployment
+
+2. ✅ Mermaid (in Markdown)
+   └─ For: Flowcharts, simple state machines, sequence diagrams
+
+3. ✅ arc42 template (Markdown version)
+   └─ For: Overall architecture documentation structure
+
+4. ✅ ADR template (Markdown)
+   └─ For: Recording design decisions
+
+5. ✅ ICD template (Markdown)
+   └─ For: Interface specifications
+
+6. ✅ VS Code with extensions:
+   ├─ Draw.io Integration
+   ├─ Markdown Preview Enhanced
+   ├─ Mermaid Preview
+   └─ PlantUML (add later when comfortable)
+
+7. ✅ Git + GitHub
+   └─ For: Version control and sharing
+
+
+### **Project Structure**
+project-root/
+├── docs/
+│ ├── architecture/
+│ │ ├── arc42.md # Main architecture doc
+│ │ ├── diagrams/
+│ │ │ ├── system-context.drawio
+│ │ │ ├── system-context.png
+│ │ │ ├── component-diagram.puml
+│ │ │ └── state-machine.mermaid
+│ │ └── views/
+│ │ ├── building-block-view.md
+│ │ ├── runtime-view.md
+│ │ └── deployment-view.md
+│ ├── adr/
+│ │ ├── README.md # Index of ADRs
+│ │ ├── ADR-001-use-freertos.md
+│ │ ├── ADR-002-i2c-for-sensor.md
+│ │ └── template.md
+│ ├── icd/
+│ │ ├── ICD-UART-WiFi.md
+│ │ ├── ICD-I2C-Sensor.md
+│ │ └── ICD-SPI-Display.md
+│ ├── design/
+│ │ ├── memory-map.md
+│ │ ├── task-design.md
+│ │ └── power-budget.md
+│ └── api/
+│ └── Doxyfile # Doxygen configuration
+├── src/
+│ ├── app/
+│ ├── drivers/
+│ ├── hal/
+│ └── rtos/
+├── tests/
+├── README.md
+└── CMakeLists.txt
+
+
+Knowledge Domains for Embedded Software Architect
+
+
+
+1. System Decomposition & Layering
+What: Breaking complex systems into modules with clear interfaces
+
+Embedded-specific:
+
+Hardware Abstraction Layer (HAL) design
+Board Support Package (BSP) architecture
+Driver layer vs. middleware vs. application
+RTOS abstraction (so you can swap FreeRTOS ↔ Zephyr)
+
+2. Design Patterns for Embedded
+What: Reusable solutions to common problems
+
+Critical patterns for embedded:
+
+State Machine (device modes, protocol handling)
+Observer/Publish-Subscribe (event-driven systems)
+Factory (creating different sensor/actuator objects)
+Singleton (hardware resource managers)
+Command (queuing operations for deferred execution)
+Strategy (swappable algorithms, e.g., different control loops)
+
+3. Concurrency & RTOS Architecture
+What: Designing multi-threaded embedded systems
+
+Key decisions:
+
+Task decomposition (how many tasks? what priority?)
+Inter-task communication (queues vs. semaphores vs. event flags)
+Shared resource protection (mutexes, critical sections)
+Interrupt vs. task context (what happens in ISR vs. task)
+Practice:
+
+Design a data acquisition system:
+- Sensor reads at 1kHz (high priority)
+- Data processing at 100Hz (medium priority)
+- Display update at 10Hz (low priority)
+- Command interface (event-driven)
+
+4. Memory Architecture
+What: Understanding memory constraints and optimization
+
+Embedded-specific:
+
+Stack sizing (how much per task?)
+Heap management (static pools vs. dynamic allocation)
+Flash wear leveling (for data persistence)
+Memory-mapped I/O (peripheral access)
+DMA usage (zero-copy data transfers)
+Practice:
+
+Analyze a project's memory usage:
+1. Map out memory layout (Flash, RAM, stack, heap)
+2. Identify memory bottlenecks
+3. Optimize largest consumers
+4. Document memory budget for future features
+
+
+5. Interface Design (APIs)
+What: Creating clean, usable interfaces between modules
+
+Principles:
+
+Minimal dependencies (loose coupling)
+Clear ownership (who allocates memory?)
+Error handling (return codes vs. callbacks)
+Thread safety (document if API is reentrant)
+
+6. Safety & Reliability Patterns
+What: Designing systems that don't fail
+
+Techniques:
+
+Watchdog timers (detecting hangs)
+Redundancy (dual sensors, voting)
+Fail-safe states (what happens on error?)
+Graceful degradation (keep critical functions running)
+CRC/checksums (data integrity)
+
+7. Power Management Architecture
+What: Designing low-power embedded systems
+
+Techniques:
+
+Sleep mode strategies (when to sleep, how deep)
+Peripheral clock gating (turn off unused peripherals)
+DMA for low-power data transfer
+Wake-up source management
+
+8. Communication Protocol Architecture
+What: Designing multi-device systems
+
+Decisions:
+
+Protocol selection (CAN vs. Ethernet vs. wireless)
+Message framing (how to detect start/end)
+Error handling (retries, timeouts, checksums)
+Flow control (what if receiver is slow?)
+
+9. Testing Architecture
+What: Designing systems that are testable
+
+Strategies:
+
+Dependency injection (mock hardware in tests)
+Hardware abstraction (test application without hardware)
+Unit tests (test individual modules)
+Integration tests (test module interactions)
+Hardware-in-the-loop (HIL) testing
+
+
+10. Bootloader & Update Architecture
+Secure boot
+Firmware update mechanisms (OTA, USB, UART)
+Dual-bank Flash, rollback mechanisms
+11. Security Architecture
+Secure storage (encrypted Flash)
+Secure communication (TLS for embedded)
+Hardware security modules (TPM, secure elements)
+12. Multi-Processor Systems
+Heterogeneous systems (Cortex-A + Cortex-M)
+Shared memory architectures
+Inter-processor communication
