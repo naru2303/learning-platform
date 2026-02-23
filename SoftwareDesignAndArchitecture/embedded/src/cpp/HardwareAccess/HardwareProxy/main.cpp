@@ -1,4 +1,4 @@
-#include "HardwareProxy/LedDriver.hpp"
+#include "LedDriver.hpp"
 #include <iostream>
 #include <vector>
 
@@ -7,8 +7,8 @@
 alignas(std::uint32_t) std::uint8_t MOCK_GPIO_MEMORY[1024];
 
 int main() {
-    // Determine the address at runtime or compile time
-    constexpr std::uintptr_t GPIO_BASE_ADDR = reinterpret_cast<std::uintptr_t>(MOCK_GPIO_MEMORY);
+    // Determine the address at runtime
+    const std::uintptr_t GPIO_BASE_ADDR = reinterpret_cast<std::uintptr_t>(MOCK_GPIO_MEMORY);
 
     // Instantiate the Proxy
     // We act as if MOCK_GPIO_MEMORY is the hardware address

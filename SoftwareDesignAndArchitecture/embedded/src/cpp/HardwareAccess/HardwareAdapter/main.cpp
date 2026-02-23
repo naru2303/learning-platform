@@ -16,7 +16,7 @@ void runDiagnostics(ILight& light) {
 }
 
 int main() {
-    constexpr std::uintptr_t ADDR = reinterpret_cast<std::uintptr_t>(MOCK_CPP_MEM);
+    const std::uintptr_t ADDR = reinterpret_cast<std::uintptr_t>(MOCK_CPP_MEM);
     
     // 1. Low-level Driver
     LedDriver realLed(ADDR, 3);
